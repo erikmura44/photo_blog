@@ -2,9 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryEntryService } from './backend';
 
 import { AppComponent } from './app.component';
-import { EntryListComponent, EntryComponent } from './entries';
+import { EntryListComponent, EntryComponent, EntryService } from './entries';
 
 @NgModule({
   declarations: [
@@ -15,9 +17,10 @@ import { EntryListComponent, EntryComponent } from './entries';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryEntryService)
   ],
-  providers: [],
+  providers: [EntryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
