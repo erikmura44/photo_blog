@@ -6,13 +6,14 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryEntryService } from './backend';
 
 import { AppComponent } from './app.component';
-import { EntryListComponent, EntryComponent, EntryService } from './entries';
+import { EntryListComponent, EntryComponent, EntryService, EntryCommentFormComponent } from './entries';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntryComponent,
-    EntryListComponent
+    EntryListComponent,
+    EntryCommentFormComponent
   ],
   imports: [
     BrowserModule,
